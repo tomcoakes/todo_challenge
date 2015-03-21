@@ -1,7 +1,11 @@
 var todoApp = angular.module('ToDoApp', []);
 
 todoApp.controller('ToDoAppController', function($scope) {
-  $scope.someText = {
-    "name": "Tom"
+  $scope.addNewTask = function() {
+    $scope.items.push($scope.newTask);
   };
+
+  $scope.items = [
+  ];
+
 });
