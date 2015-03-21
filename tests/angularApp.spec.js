@@ -10,8 +10,14 @@ describe('ToDoAppController', function() {
     });
   }));
 
-  it("", function() {
-    
+  it("initialises with no tasks in the task list", function() {
+    expect(scope.items).toEqual([]);
+  });
+
+  it("can add new tasks to the task list", function() {
+    scope.newTask = "Buy milk";
+    scope.addNewTask();
+    expect(scope.items).toEqual(["Buy milk"]);
   });
 
 });
