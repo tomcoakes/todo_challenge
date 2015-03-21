@@ -1,0 +1,15 @@
+#wrapper600 {
+  width: 600px;
+  height: 300px;
+  border: solid #d3d3d3 1px;
+  margin: 0 auto;
+}
+
+#tasklist ul {
+  list-style-type: none;
+}
+
+#tasklist ul li input, li button {
+  margin-right: 20px;
+  margin-left: 20px;
+}

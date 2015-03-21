@@ -2,16 +2,34 @@
 <html ng-app="ToDoApp">
 <head>
   <title>Tom's ToDos</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css"></link>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/AngularApp.js"></script>
 </head>
 <body ng-controller="ToDoAppController">
 
-  <h1>This is HTML</h1>
-  <%= "and this is embedded JavaScript in an " + title + " file" %><br/>
-
-  <button>Click Me</button>
+  <section id='wrapper600'>
+    <header id='newtask'>
+      New Task: <input type="text" placeholder="What do you want to do today?">
+      <input type="button" value="Add to list">
+    </header>
+    <section id='tasklist'>
+      <ul>
+        <li><input type="checkbox">Buy milk<button>X</button></li>
+        <li><input type="checkbox">Walk dog<button>X</button></li>
+        <li><input type="checkbox">Finish challenge<button>X</button></li>
+        <li><input type="checkbox">Read book<button>X</button></li>
+      </ul>
+      <p>4 tasks remaining</p>
+    </section>
+    <footer id='buttons'>
+      <button>All</button>
+      <button>Active</button>
+      <button>Complete</button>
+      <button>Clear All</button>
+    </footer>
+  </section>
 
 </body>
 </html>
