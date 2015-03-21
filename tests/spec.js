@@ -12,8 +12,7 @@ describe("ToDo App", function() {
       browser.get("http://localhost:3000");
       element(by.model('newTask')).sendKeys('Buy milk');
       element(by.id('createtask')).click();
-      var text = element(by.id('item').getText());
-      expect(text.toContain("Buy milk"));
+      expect(element(by.repeater('item in items')).getText()).toContain("Buy milk");
     });
   });
 
