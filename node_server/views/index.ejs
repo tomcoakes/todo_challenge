@@ -6,6 +6,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/AngularApp.js"></script>
+  <script src="js/task.js"></script>
 </head>
 <body ng-controller="ToDoAppController">
 
@@ -16,7 +17,7 @@
     </header>
     <section id='tasklist'>
       <ul ng-repeat="item in items" id="item">
-        <li>{{item}}</li>
+        <li><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}</li>
       </ul>
       <p>4 tasks remaining</p>
     </section>
