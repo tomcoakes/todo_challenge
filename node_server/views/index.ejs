@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ToDoApp">
 <head>
   <title>Tom's ToDos</title>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/AngularApp.js"></script>
 </head>
-<body>
+<body ng-controller="ToDoAppController">
 
   <h1>This is HTML</h1>
-  <%= "and this is embedded JavaScript" %>
+  <%= "and this is embedded JavaScript" %><br/>
+
+  <button>Click Me</button>
 
 </body>
 </html>
