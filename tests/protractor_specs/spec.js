@@ -20,7 +20,7 @@ describe("ToDo App", function() {
       browser.get("http://localhost:3000");
       element(by.model('newTask')).sendKeys('Buy milk');
       element(by.id('createtask')).click();
-      expect(element(by.repeater('item in items'))[0].completed).toBe(false);
+      expect(element(by.repeater('item in items'))[0].isCompleted).toBe(false);
     });
 
   });
