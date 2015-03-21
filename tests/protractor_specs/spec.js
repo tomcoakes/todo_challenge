@@ -28,7 +28,7 @@ describe("ToDo App", function() {
       element(by.model('newTask')).sendKeys('Buy milk');
       element(by.id('createtask')).click();
       element(by.model('completed')).click();
-      expect(hasClass(element(by.repeater('item in items')), 'completed')).toBe(true);
+      expect(hasClass(element(by.css('.taskline')), 'completed')).toBe(true);
     });
 
   });

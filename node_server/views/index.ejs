@@ -17,7 +17,7 @@
     </header>
     <section id='tasklist'>
       <ul ng-repeat="item in items" id="item">
-        <li><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}</li>
+        <li class="taskline" ng-class="{completed: completed}"><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}</li>
       </ul>
       <p>4 tasks remaining</p>
     </section>
