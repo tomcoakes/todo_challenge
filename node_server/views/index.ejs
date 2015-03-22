@@ -21,7 +21,7 @@
     </header>
     <section id='tasklist'>
       <ul ng-repeat="item in items" id="item">
-        <li class="taskline" ng-class="{completed: completed}"><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}<button id="delete">X</button></li>
+        <li class="taskline" ng-class="{completed: completed}"><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}<button id="delete" ng-click="deleteTask(item)">X</button></li>
       </ul>
       <p ng-model="remaining">{{remainingTasks()}}</p>
     </section>

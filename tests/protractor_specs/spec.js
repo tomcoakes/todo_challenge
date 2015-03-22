@@ -48,7 +48,7 @@ describe("ToDo App", function() {
         element(by.model('newTask')).sendKeys('Buy milk');
         element(by.id('createtask')).click();
         element(by.id('delete')).click();
-        expect(element(by.repeater('item in items')).getText()).toNotContain("Buy milk");
+        expect(element(by.id('tasklist')).getText()).toNotContain("Buy milk");
       });
 
     });
