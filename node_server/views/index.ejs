@@ -12,8 +12,10 @@
 
   <section id='wrapper600'>
     <header id='newtask'>
-      New Task: <input ng-model="newTask" type="text" placeholder="What do you want to do today?">
-      <input id="createtask" type="button" value="Add to list" ng-click="addNewTask()">
+      <form>
+        New Task: <input ng-model="newTask" type="text" placeholder="What do you want to do today?">
+        <input id="createtask" type="submit" value="Add to list" ng-click="addNewTask()">
+      </form>
     </header>
     <section id='tasklist'>
       <ul ng-repeat="item in items" id="item">
