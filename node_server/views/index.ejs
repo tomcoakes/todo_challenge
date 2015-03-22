@@ -26,9 +26,9 @@
       <p ng-model="remaining">{{remainingTasks()}}</p>
     </section>
     <footer id='buttons'>
-      <button>All</button>
+      <button id="showall" ng-click="show='All'">All</button>
       <button>Active</button>
-      <button id="showcompleted" ng-class="{'active' : show == 'Complete' }" ng-click="show='Complete'">Complete</button>
+      <button id="showcompleted" ng-click="show='Complete'">Complete</button>
       <button id="deleteall" ng-click="deleteAllTasks()">Clear All</button>
     </footer>
   </section>

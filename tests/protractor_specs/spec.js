@@ -76,7 +76,17 @@ describe("ToDo App", function() {
         expect(element(by.id('tasklist')).getText()).toNotContain("Eat cheese");
       });
 
-
+      it("a user can filter the task list to show all tasks", function() {
+        browser.get("http://localhost:3000");
+        element(by.model('newTask')).sendKeys('Buy milk');
+        element(by.id('createtask')).click();
+        element(by.model('completed')).click();
+        element(by.model('newTask')).sendKeys('Eat cheese');
+        element(by.id('createtask')).click();
+        element(by.id('showcompleted')).click();
+        element(by.id('showall')).click();
+        expect(element(by.id('tasklist')).getText()).toContain("Eat cheese");
+      });
 
     });
 
