@@ -8,6 +8,11 @@ todoApp.controller('ToDoAppController', function($scope) {
     var newTask = new Task($scope.newTask);
     $scope.items.push(newTask);
   };
+
+  $scope.deleteTask = function(item) {
+    var index = $scope.items.indexOf(item);
+    $scope.items.splice(index, 1);
+  };
   
   $scope.changeCompletionStatus = function(item) {
     (item.isCompleted === true) ? item.isCompleted = false : item.isCompleted = true;
