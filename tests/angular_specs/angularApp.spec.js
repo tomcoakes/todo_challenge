@@ -47,5 +47,14 @@ describe('ToDoAppController', function() {
     expect(scope.remainingTasks()).toEqual("0 tasks remaining");
   });
 
+  it("can delete all tasks at once", function() {
+    scope.newTask = "Buy milk";
+    scope.addNewTask();
+    scope.newTask = "Eat cheese";
+    scope.addNewTask();
+    scope.deleteAllTasks();
+    expect(scope.remainingTasks()).toEqual("0 tasks remaining");
+  });
+
 });
 

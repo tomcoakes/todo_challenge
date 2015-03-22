@@ -13,6 +13,10 @@ todoApp.controller('ToDoAppController', function($scope) {
     var index = $scope.items.indexOf(item);
     $scope.items.splice(index, 1);
   };
+
+  $scope.deleteAllTasks = function() {
+    $scope.items = [];
+  };
   
   $scope.changeCompletionStatus = function(item) {
     (item.isCompleted === true) ? item.isCompleted = false : item.isCompleted = true;
