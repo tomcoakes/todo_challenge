@@ -33,7 +33,11 @@ describe('ToDoAppController', function() {
     scope.changeCompletionStatus(scope.items[0]);
     scope.newTask = "Eat cheese";
     scope.addNewTask();
-    expect(scope.remainingTasks).toEqual("1 task remaining");
+    expect(scope.remainingTasks()).toEqual("1 task remaining");
+  });
+
+  it("knows that 0 tasks are remaining when none have been entered", function() {
+    expect(scope.remainingTasks()).toEqual("0 tasks remaining");
   });
 
 });
