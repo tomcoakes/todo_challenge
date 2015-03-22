@@ -41,6 +41,18 @@ describe("ToDo App", function() {
       expect(element(by.model('remaining')).getText()).toEqual('1 task remaining');
     });
 
+    describe("Deleting a task", function() {
+
+      it("can delete a task by clicking the button marked X", function() {
+        browser.get("http://localhost:3000");
+        element(by.model('newTask')).sendKeys('Buy milk');
+        element(by.id('createtask')).click();
+        element(by.id('delete')).click();
+        expect(element(by.repeater('item in items')).getText()).toNotContain("Buy milk");
+      });
+
+    });
+
   });
 
   var hasClass = function (element, cls) {
