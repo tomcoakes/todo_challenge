@@ -56,5 +56,18 @@ describe('ToDoAppController', function() {
     expect(scope.remainingTasks()).toEqual("0 tasks remaining");
   });
 
+  it("returns true when show property is set to 'All'", function() {
+    scope.show = 'All';
+    expect(scope.showTasks()).toEqual(true);
+  });
+
+  it("returns true when show property is set to 'Complete'", function() {
+    scope.show = 'Complete';
+    scope.newTask = "Buy milk";
+    scope.addNewTask();
+    scope.changeCompletionStatus(scope.items[0]);
+    expect(scope.showTasks(scope.items[0])).toEqual(true);
+  });
+
 });
 
