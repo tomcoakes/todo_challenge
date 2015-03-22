@@ -63,6 +63,21 @@ describe("ToDo App", function() {
 
     });
 
+    describe("Filtering tasks", function() {
+
+      it("a user can filter the task list to show only completed tasks", function() {
+        browser.get("http://localhost:3000");
+        element(by.model('newTask')).sendKeys('Buy milk');
+        element(by.id('createtask')).click();
+        element(by.model('completed')).click();
+        element(by.model('newTask')).sendKeys('Eat cheese');
+        element(by.id('createtask')).click();
+        element(by.id('showcompleted')).click();
+        expect(element(by.id('tasklist')).getText()).toNotContain("Eat cheese");
+      });
+
+    });
+
   });
 
   var hasClass = function (element, cls) {
