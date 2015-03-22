@@ -8,6 +8,7 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/AngularApp.js"></script>
   <script src="js/task.js"></script>
+  <script src="js/jqueryFunctions.js"></script>
 </head>
 <body ng-controller="ToDoAppController">
 
@@ -22,7 +23,7 @@
       <ul ng-repeat="item in items" id="item">
         <li class="taskline" ng-class="{completed: completed}"><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}</li>
       </ul>
-      <p>4 tasks remaining</p>
+      <p ng-model="remaining">4 tasks remaining</p>
     </section>
     <footer id='buttons'>
       <button>All</button>

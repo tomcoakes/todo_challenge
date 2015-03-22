@@ -4,7 +4,6 @@ todoApp.controller('ToDoAppController', function($scope) {
   $scope.addNewTask = function() {
     var newTask = new Task($scope.newTask);
     $scope.items.push(newTask);
-    $("form")[0].reset();
   };
   
   $scope.changeCompletionStatus = function(item) {
@@ -12,5 +11,6 @@ todoApp.controller('ToDoAppController', function($scope) {
   };
   
   $scope.items = [];
+
 
 });

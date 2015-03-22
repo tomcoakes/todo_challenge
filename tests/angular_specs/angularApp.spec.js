@@ -27,5 +27,14 @@ describe('ToDoAppController', function() {
     expect(scope.items[0].isCompleted).toEqual(true);
   });
 
+  it("knows that 1 task is remaining when one of two have been completed", function() {
+    scope.newTask = "Buy milk";
+    scope.addNewTask();
+    scope.changeCompletionStatus(scope.items[0]);
+    scope.newTask = "Eat cheese";
+    scope.addNewTask();
+    expect(scope.remainingTasks).toEqual("1 task remaining");
+  });
+
 });
 

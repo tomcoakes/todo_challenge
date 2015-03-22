@@ -31,6 +31,16 @@ describe("ToDo App", function() {
       expect(hasClass(element(by.css('.taskline')), 'completed')).toBe(true);
     });
 
+    it("tracks the number of incomplete tasks currently left", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.model('completed')).click();
+      element(by.model('newTask')).sendKeys('Eat cheese');
+      element(by.id('createtask')).click();
+      expect(element(by.model('remaining')).getText()).toEqual('1 task remaining');
+    });
+
   });
 
   var hasClass = function (element, cls) {
