@@ -4,6 +4,7 @@
   <title>Tom's ToDos</title>
   <link rel="stylesheet" type="text/css" href="styles/main.css"></link>
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/AngularApp.js"></script>
@@ -14,17 +15,19 @@
 
   <section id='wrapper600'>
     <header id='newtask'>
-      <form>
-        New Task: <input ng-model="newTask" type="text" placeholder="What do you want to do today?">
-        <input id="createtask" type="submit" value="Add to list" ng-click="addNewTask()">
+      <form name="taskform" id="taskform" novalidate>
+        New Task: <input ng-model="newTask" type="text" name="tasktext" placeholder="What do you want to do today?" required>
+        <button id="createtask" ng-click="taskform.$valid && addNewTask()">Add to list</button>
       </form>
     </header>
+    
     <section id='tasklist'>
       <ul ng-repeat="item in items | filter:showTasks" id="item">
         <li class="taskline" ng-class="{completed: completed}"><input ng-model="completed" ng-change="changeCompletionStatus(item)"type="checkbox">{{item.title}} {{item.isCompleted}}<button id="delete" ng-click="deleteTask(item)">X</button></li>
       </ul>
       <p ng-model="remaining">{{remainingTasks()}}</p>
     </section>
+
     <footer id='buttons'>
       <button id="showall" ng-click="show='All'">All</button>
       <button id="showactive" ng-click="show='Active'">Active</button>

@@ -6,6 +6,7 @@ todoApp.controller('ToDoAppController', function($scope) {
 
   $scope.addNewTask = function() {
     var newTask = new Task($scope.newTask);
+    $scope.newTask = "";
     $scope.items.push(newTask);
   };
 
