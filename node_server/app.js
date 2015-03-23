@@ -11,8 +11,11 @@ var users = require('./routes/users');
 var app = express();
 var server = require('http').createServer(app);
 
+var port = process.env.PORT || 5000;
 
-app.listen(process.env.PORT || 5000);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
