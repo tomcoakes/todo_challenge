@@ -1,19 +1,59 @@
-#wrapper600 {
+.container {
   width: 600px;
-  height: 300px;
+  height: auto;
   border: solid #d3d3d3 1px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+header {
   margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 6px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #DADFE1;
+}
+
+header form input {
+  width: 300px;
+  font-weight: normal;
+}
+
+#newtasktext {
+  margin-right: 5px;
 }
 
 #tasklist ul {
   list-style-type: none;
+  width: 500px;
+  margin-top: 10px;
 }
 
-#tasklist ul li input, li button {
+#tasklist ul li input {
   margin-right: 20px;
   margin-left: 20px;
+}
+
+#tasklist p {
+  margin-top: 10px;
 }
 
 .completed {
   text-decoration: line-through;
 }
+
+#delete {
+  float: right;
+}
+
+.selected {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.selected:hover {
+  background-color:#449d44;
+  border-color:#398439;
+};

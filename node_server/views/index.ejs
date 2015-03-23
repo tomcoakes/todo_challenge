@@ -2,6 +2,7 @@
 <html ng-app="ToDoApp">
 <head>
   <title>Tom's ToDos</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
   <link rel="stylesheet" type="text/css" href="styles/main.css"></link>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -12,26 +13,26 @@
 </head>
 <body ng-controller="ToDoAppController">
 
-  <section id='wrapper600'>
+  <section class='container'>
     <header id='newtask'>
       <form name="taskform" id="taskform" novalidate>
-        New Task: <input ng-model="newTask" type="text" name="tasktext" placeholder="What do you want to do today?" required>
+        <span id="newtasktext"> New Task:</span> <input ng-model="newTask" type="text" name="tasktext" placeholder="What do you want to do today?" required>
         <button id="createtask" ng-click="taskform.$valid && addNewTask()">Add to list</button>
       </form>
     </header>
 
     <section id='tasklist'>
       <ul ng-repeat="item in items | filter:showTasks" id="item">
-        <li class="taskline" ng-class="{completed: item.isCompleted === true}"><input id="checkbox" ng-model="completed" ng-change="changeCompletionStatus(item)" type="checkbox" ng-checked="item.isCompleted === true">{{item.title}} {{item.isCompleted}}<button id="delete" ng-click="deleteTask(item)">X</button></li>
+        <li class="taskline" ng-class="{completed: item.isCompleted === true}"><input id="checkbox" ng-model="completed" ng-change="changeCompletionStatus(item)" type="checkbox" ng-checked="item.isCompleted === true">{{item.title}}<button id="delete" ng-click="deleteTask(item)">X</button></li>
       </ul>
       <p ng-model="remaining">{{remainingTasks()}}</p>
     </section>
 
     <footer id='buttons'>
-      <button id="showall" ng-click="show='All'">All</button>
-      <button id="showactive" ng-click="show='Active'">Active</button>
-      <button id="showcompleted" ng-click="show='Complete'">Complete</button>
-      <button id="deleteall" ng-click="deleteAllTasks()">Clear All</button>
+      <button class="btn btn-primary" id="showall" ng-class="{selected: show === 'All'}" ng-click="show='All'">All</button>
+      <button class="btn btn-primary" id="showactive" ng-class="{selected: show === 'Active'}" ng-click="show='Active'">Active</button>
+      <button class="btn btn-primary" id="showcompleted" ng-class="{selected: show === 'Complete'}" ng-click="show='Complete'">Complete</button>
+      <button class="btn btn-primary" id="deleteall" ng-click="deleteAllTasks()">Clear All</button>
     </footer>
   </section>
 
