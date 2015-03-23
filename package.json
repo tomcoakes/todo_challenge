@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "grunt --verbose",
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/tomcoakes/todo_challenge",
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.1",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
