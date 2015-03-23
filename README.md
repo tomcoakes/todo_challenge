@@ -1,5 +1,7 @@
 # Todo Challenge
 
+![Travis build](https://travis-ci.org/tomcoakes/todo_challenge.svg?branch=master)
+
 ## My progress
 Because I went straight into building the app, I failed to find time to set up Travis CL on the repo - but I did make good progress that helped establish a lot of the concepts that had passed me by during the week.
 
