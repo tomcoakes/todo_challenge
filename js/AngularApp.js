@@ -35,8 +35,10 @@ todoApp.controller('ToDoAppController', function($scope) {
   $scope.showTasks = function  (task) {
     if($scope.show === 'All') {
       return true;
-    } else if(task.isCompleted && $scope.show === "Complete"){
-        return true;
+    } else if (task.isCompleted && $scope.show === "Complete") {
+      return true;
+    } else if (!task.isCompleted && $scope.show === "Active") {
+      return true;
     } else {
       return false;
     }

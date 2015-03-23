@@ -41,56 +41,70 @@ describe("ToDo App", function() {
       expect(element(by.model('remaining')).getText()).toEqual('1 task remaining');
     });
 
-    describe("Deleting tasks", function() {
+  });
 
-      it("a user can delete a task by clicking the button marked X", function() {
-        browser.get("http://localhost:3000");
-        element(by.model('newTask')).sendKeys('Buy milk');
-        element(by.id('createtask')).click();
-        element(by.id('delete')).click();
-        expect(element(by.id('tasklist')).getText()).toNotContain("Buy milk");
-      });
 
-      it("a user can delete all the tasks at once using the clear all button", function() {
-        browser.get("http://localhost:3000");
-        element(by.model('newTask')).sendKeys('Buy milk');
-        element(by.id('createtask')).click();
-        element(by.model('newTask')).sendKeys('Eat cheese');
-        element(by.id('createtask')).click();
-        element(by.id('deleteall')).click();
-        expect(element(by.model('remaining')).getText()).toEqual('0 tasks remaining');
-      });
+  describe("Deleting tasks", function() {
 
+    it("a user can delete a task by clicking the button marked X", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.id('delete')).click();
+      expect(element(by.id('tasklist')).getText()).toNotContain("Buy milk");
     });
 
-    describe("Filtering tasks", function() {
-
-      it("a user can filter the task list to show only completed tasks", function() {
-        browser.get("http://localhost:3000");
-        element(by.model('newTask')).sendKeys('Buy milk');
-        element(by.id('createtask')).click();
-        element(by.model('completed')).click();
-        element(by.model('newTask')).sendKeys('Eat cheese');
-        element(by.id('createtask')).click();
-        element(by.id('showcompleted')).click();
-        expect(element(by.id('tasklist')).getText()).toNotContain("Eat cheese");
-      });
-
-      it("a user can filter the task list to show all tasks", function() {
-        browser.get("http://localhost:3000");
-        element(by.model('newTask')).sendKeys('Buy milk');
-        element(by.id('createtask')).click();
-        element(by.model('completed')).click();
-        element(by.model('newTask')).sendKeys('Eat cheese');
-        element(by.id('createtask')).click();
-        element(by.id('showcompleted')).click();
-        element(by.id('showall')).click();
-        expect(element(by.id('tasklist')).getText()).toContain("Eat cheese");
-      });
-
+    it("a user can delete all the tasks at once using the clear all button", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.model('newTask')).sendKeys('Eat cheese');
+      element(by.id('createtask')).click();
+      element(by.id('deleteall')).click();
+      expect(element(by.model('remaining')).getText()).toEqual('0 tasks remaining');
     });
 
   });
+
+  describe("Filtering tasks", function() {
+
+    it("a user can filter the task list to show only completed tasks", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.model('completed')).click();
+      element(by.model('newTask')).sendKeys('Eat cheese');
+      element(by.id('createtask')).click();
+      element(by.id('showcompleted')).click();
+      expect(element(by.id('tasklist')).getText()).toNotContain("Eat cheese");
+    });
+
+    it("a user can filter the task list to show all tasks", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.model('completed')).click();
+      element(by.model('newTask')).sendKeys('Eat cheese');
+      element(by.id('createtask')).click();
+      element(by.id('showcompleted')).click();
+      element(by.id('showall')).click();
+      expect(element(by.id('tasklist')).getText()).toContain("Eat cheese");
+    });
+
+    it("a user can filter the task list to show only active tasks", function() {
+      browser.get("http://localhost:3000");
+      element(by.model('newTask')).sendKeys('Buy milk');
+      element(by.id('createtask')).click();
+      element(by.model('completed')).click();
+      element(by.model('newTask')).sendKeys('Eat cheese');
+      element(by.id('createtask')).click();
+      element(by.id('showactive')).click();
+      expect(element(by.id('tasklist')).getText()).toNotContain("Buy milk");
+    });
+
+  });
+
+  
 
   var hasClass = function (element, cls) {
     return element.getAttribute('class').then(function (classes) {
