@@ -1,9 +1,17 @@
 # Todo Challenge
 
-* Deadline: submit completed pull request by 9am on Monday
-* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
+## My progress
+Because I went straight into building the app, I failed to find time to set up Travis CL on the repo - but I did make good progress that helped establish a lot of the concepts that had passed me by during the week.
+
+* I completely test-drove the project with an outside-in approach, using protractor for feature tests and then moving on to jasmine unit tests when necessary.
+* I created an express/node server because I plan to integrate a database at a later time.
+* My implementation for marking tasks as complete isn't ideal, and breaks in some edge cases, so I plan to rewrite this and find a more solid method than just monitoring for the checkbox to be clicked.
+
 
 ## Challenge
+
+* Deadline: submit completed pull request by 9am on Monday
+* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
 
 ![Todo mockup](https://makersacademy.mybalsamiq.com/mockups/2914603.png?key=afabb09aef2901a2732515ae4349c1ec0458294b)
 
@@ -56,4 +64,3 @@ Don't worry about deployment, and make sure you read the CONTRIBUTING.md when su
 * Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
 
 Good luck!
-
