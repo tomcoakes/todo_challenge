@@ -20,7 +20,11 @@ todoApp.controller('ToDoAppController', function($scope) {
   };
   
   $scope.changeCompletionStatus = function(item) {
-    (item.isCompleted === true) ? item.isCompleted = false : item.isCompleted = true;
+    if (item.isCompleted === true) {
+      item.isCompleted = false;
+    } else {
+      item.isCompleted = true;
+    }
   };
   
   $scope.remainingTasks = function() {
