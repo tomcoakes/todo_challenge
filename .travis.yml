@@ -1,4 +1,13 @@
 language: node_js
 node_js:
   - "0.12"
-before_install: npm install -g grunt-cli
+before_install:
+  - npm install -g grunt-cli &
+  - npm install -g webdriver-manager
+before_script:
+  - node node_server/bin/www &
+  - sleep 2 &
+  - webdriver-manager start
+script:
+  - karma start tests/angular_specs/karma.conf.js
+  - protractor tests/protractor_specs/conf.js
