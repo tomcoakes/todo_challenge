@@ -10,5 +10,7 @@ before_script:
   - webdriver-manager update --standalone
 script:
   - webdriver-manager start &
+  - sleep 10
   - karma start tests/angular_specs/karma.conf.js &
+  - sleep 10
   - protractor tests/protractor_specs/conf.js
