@@ -4,6 +4,8 @@ node_js:
 before_install:
   - npm install -g grunt-cli &
   - npm install -g webdriver-manager
+  - npm install -g karma
+  - npm install -g protractor
 before_script:
   - node node_server/bin/www &
   - sleep 2
