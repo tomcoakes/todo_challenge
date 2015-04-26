@@ -8,6 +8,7 @@ before_script:
   - node node_server/bin/www &
   - sleep 2
   - webdriver-manager start
+  - webdriver-manager update --standalone
 script:
   - karma start tests/angular_specs/karma.conf.js
   - protractor tests/protractor_specs/conf.js
