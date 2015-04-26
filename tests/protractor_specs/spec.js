@@ -43,7 +43,6 @@ describe("ToDo App", function() {
 
   });
 
-
   describe("Deleting tasks", function() {
 
     it("a user can delete a task by clicking the button marked X", function() {
@@ -103,8 +102,6 @@ describe("ToDo App", function() {
     });
 
   });
-
-  
 
   var hasClass = function (element, cls) {
     return element.getAttribute('class').then(function (classes) {
