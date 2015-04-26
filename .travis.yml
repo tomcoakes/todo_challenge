@@ -7,12 +7,12 @@ before_install:
   - npm install -g karma
   - npm install -g protractor
 before_script:
-  - node node_server/bin/www &
-  - sleep 2
-  - webdriver-manager update --standalone
-script:
-  - webdriver-manager start &
-  - sleep 10
-  - karma start tests/angular_specs/karma.conf.js &
-  - sleep 10
-  - protractor tests/protractor_specs/conf.js
+  - node node_server/bin/www
+#   - sleep 2
+#   - webdriver-manager update --standalone
+# script:
+#   - webdriver-manager start &
+#   - sleep 10
+#   - karma start tests/angular_specs/karma.conf.js &
+#   - sleep 10
+#   - protractor tests/protractor_specs/conf.js
