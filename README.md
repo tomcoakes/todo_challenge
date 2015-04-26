@@ -18,7 +18,7 @@ Described as "The 'Hello world' for MV* frameworks", this solo project was a gre
 
 ## Application Screenshot
 
-![App Screenshot](https://raw.githubusercontent.com/tomcoakes/todo_challenge/master/node_server/public/images/todo-screenshot.png)
+[![App Screenshot](https://raw.githubusercontent.com/tomcoakes/todo_challenge/master/node_server/public/images/todo-screenshot.png)](https://toms-todos.herokuapp.com)
 
 
 
